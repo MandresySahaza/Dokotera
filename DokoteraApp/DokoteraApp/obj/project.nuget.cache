@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "GhTkVCBEmVykTv7KO/doPW1uVCbt4zUmbqqmRtaPTQHJyOEj+ydzkpjxOCjXiYA3K61J/xqCbH8dfL9b7fqUCQ==",
+  "success": true,
+  "projectFilePath": "Y:\\ITU\\L3\\S5\\Programmation\\Dokotera\\DokoteraApp\\DokoteraApp\\DokoteraApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mandr\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\mandr\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\mandr\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\mandr\\.nuget\\packages\\npgsql\\8.0.1\\npgsql.8.0.1.nupkg.sha512",
+    "C:\\Users\\mandr\\.nuget\\packages\\npgsql.json.net\\8.0.1\\npgsql.json.net.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
