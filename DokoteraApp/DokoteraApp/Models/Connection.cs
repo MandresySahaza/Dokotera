@@ -6,7 +6,7 @@ namespace DokoteraApp.Models
     {
         public static NpgsqlConnection ConnectPostgres()
         {
-            string ConnString = "Server=localhost;Username=postgres;Password=root;Database=dokotera";
+            string ConnString = "Server=localhost;Username=postgres;Password=root;Database=dokotera;Port=5432";
             NpgsqlConnection Conn;
             Conn = new NpgsqlConnection(ConnString);
 

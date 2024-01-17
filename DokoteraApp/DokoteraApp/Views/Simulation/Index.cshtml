@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<Parametre>
+@{
+    ViewData["Title"] = "Simulation Index";
+}
+
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="custom-alert">
+        <div class="blur-background">
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+                <button class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<h3 class="display-4 text-center">Information du patient</h3>
+
+<br></br>
+<br>
+
+<form asp-action="InsertInformationPatient" asp-controller="Simulation">
+    <div class="row">
+        <div class="col">
+            <h3 class="fw-lighter text-center">A propos</h3>
+            <br>
+            <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Nom</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="nomPatient">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Age</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="agePatient">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3 class="fw-lighter text-center">Symptomes du patient</h3>
+            <br>
+            @foreach(var item in Model)
+            {
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">@item.Nom</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" name="@item.Nom">
+                    </div>
+                </div>
+            }
+            <br>
+            <div class="mb-3 row">
+                <button type="submit" class="btn btn-outline-success btn-lg">Simuler</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        console.log($(".close")); // Log l'élément dans la console
+        $(".close").click(function () {
+            $(".custom-alert").hide();
+        });
+    });
+</script>

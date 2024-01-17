@@ -35,3 +35,4 @@ Y:\ITU\L3\S5\Programmation\Dokotera\DokoteraApp\DokoteraApp\obj\Debug\net7.0\ref
 Y:\ITU\L3\S5\Programmation\Dokotera\DokoteraApp\DokoteraApp\obj\Debug\net7.0\DokoteraApp.pdb
 Y:\ITU\L3\S5\Programmation\Dokotera\DokoteraApp\DokoteraApp\obj\Debug\net7.0\DokoteraApp.genruntimeconfig.cache
 Y:\ITU\L3\S5\Programmation\Dokotera\DokoteraApp\DokoteraApp\obj\Debug\net7.0\ref\DokoteraApp.dll
+Y:\ITU\L3\S5\Programmation\Dokotera\DokoteraApp\DokoteraApp\bin\Debug\net7.0\System.Security.Permissions.dll

@@ -1,5 +1,7 @@
 ﻿using DokoteraApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace DokoteraApp.Controllers
@@ -15,8 +17,8 @@ namespace DokoteraApp.Controllers
 
         public IActionResult Index()
         {
-            //Patient patient = new Patient(0, "Mandresy", 20);
-            //Console.WriteLine("patient : " + patient.InsertPatient(null));
+            Patient patient = new Patient(2, "mandresy", 12);
+            //Console.WriteLine("patient : " + patient.InsertPatient(null).Age);
 
             //PatientParametre patientParametre = new PatientParametre(0, 1, 1, 12);
             //Console.WriteLine("patientParams : " + patientParametre.InsertPatientParametre(null));
@@ -24,6 +26,44 @@ namespace DokoteraApp.Controllers
             //TrancheAge trancheCorrespondant = TrancheAge.findTrancheOfAnAge(null, 12);
             //Console.WriteLine(trancheCorrespondant.Description);
 
+            //List<Maladie> maladies = Maladie.getAllMaladieCorrespondantInTrancheAgeByPatient(null , patient);
+            //foreach (Maladie maladie in maladies)
+            //{
+            //    Console.WriteLine(maladie.Nom);
+            //}
+
+            //List<MaladieParametre> maladieParametres = MaladieParametre.getParametreMaladieByIdMaladie(null, 2);
+            //foreach (MaladieParametre maladieParametre in maladieParametres)
+            //{
+            //Console.WriteLine(maladieParametre.IdParametre);
+            //}
+
+            //List<PatientParametre> patientParametres = PatientParametre.getPatientParametreByIdPatient(null , patient.Id);
+            //foreach (PatientParametre patientParametre in patientParametres)
+            //{
+            //    Console.WriteLine(patientParametre.IdParametre +" " + patientParametre.Niveau);
+            //}
+
+            //-----------------------getMaladie Parfait
+            //List<Maladie> maladiediags = patient.getMaladieOfDiag();
+            //foreach (Maladie maladiediag in maladiediags) {
+            //    Console.WriteLine(maladiediag.Nom);
+            //}
+
+            //-----------------------getMaladie tsy Parfait
+            //Dictionary<Maladie, double> maladiediags = patient.getMaladieOfDiagNonParfait();
+            //foreach ((Maladie cle , double valeur) in maladiediags) {
+            //    Console.WriteLine(cle.Nom + " " + valeur);
+            //}
+
+            //List<MedicamentParametre> medicamentParametres = MedicamentParametre.getMedicamentParametreByIdParametre(null, 1, 18);
+            //Console.WriteLine(medicamentParametres.Count());
+
+            List<Parametre> listeParams = MedicamentParametre.getParametreSitranaMedicament(null , 2);
+            for (int i = 0; i < listeParams.Count(); i++)
+            {
+                Console.WriteLine(listeParams[i].Nom);
+            }
 
             return View();
         }
@@ -38,5 +78,6 @@ namespace DokoteraApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

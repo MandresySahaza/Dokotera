@@ -64,8 +64,5 @@ namespace DokoteraApp.Models
         }
 
 
-
-
-
     }
 }

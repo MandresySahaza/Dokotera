@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession(); //session
 
 var app = builder.Build();
 
@@ -19,6 +20,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession(); // Activez la gestion de session
 
 app.MapControllerRoute(
     name: "default",
