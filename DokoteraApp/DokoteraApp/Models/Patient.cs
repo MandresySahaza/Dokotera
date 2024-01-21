@@ -117,7 +117,7 @@ namespace DokoteraApp.Models
         }
 
 
-        //raha saisina daholo (tsy parfait)
+        //raha raisina daholo (tsy parfait)
         public Dictionary<Maladie , double> getMaladieOfDiagNonParfait()
         {
             NpgsqlConnection con = null;

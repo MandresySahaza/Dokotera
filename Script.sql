@@ -158,9 +158,9 @@ INSERT INTO ContreIndication VALUES (default , 5 , 4 , 3);
 
 INSERT INTO MaladieParametre VALUES (default , 1 , 2 , 3 , 8 , 2);
 INSERT INTO MaladieParametre VALUES (default , 1 , 4 , -9 , -2 , 2);
+
 INSERT INTO MaladieParametre VALUES (default , 2 , 1 , 3 , 9 , 2);
 INSERT INTO MaladieParametre VALUES (default , 2 , 3 , 2 , 10 , 2);
-
 INSERT INTO MaladieParametre VALUES (default , 2 , 2 , 2 , 10 , 3);
 
 
@@ -179,7 +179,6 @@ INSERT INTO Maladie VALUES (default , 'Indigestion');
 INSERT INTO Maladie VALUES (default , 'Fatige');
 
 
-
 INSERT INTO TrancheAge VALUES (default , 'enfant' , 1 , 18);
 INSERT INTO TrancheAge VALUES (default , 'jeune' , 19 , 60);
 INSERT INTO TrancheAge VALUES (default , 'adulte' , 61 , 200);
@@ -191,40 +190,39 @@ INSERT INTO Medicament VALUES (default , 'Dollipran' , 0  ,200, 30000);
 INSERT INTO Medicament VALUES (default , 'MagneB6' , 0  ,200, 35000);
 
 
+INSERT INTO MaladieParametre VALUES (default , 1 , 1 , 5 , 8 , 2); --Grippe --loha --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 1 , 3 , 4 , 7 , 2); --Grippe --tenda --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 1 , 4 , 6 , 9 , 2); --Grippe --lelo --niveauMin --niveauMax --idTrancheAge
 
-INSERT INTO MaladieParametre VALUES (default , 1 , 1 , 5 , 8 , 2); --idMaladie --idparametre --niveauMin --niveauMax --idTrancheAge
-INSERT INTO MaladieParametre VALUES (default , 1 , 3 , 4 , 7 , 2);
-INSERT INTO MaladieParametre VALUES (default , 1 , 4 , 6 , 9 , 2);
+INSERT INTO MaladieParametre VALUES (default , 2 , 1 , 3 , 6 , 2); --Indigestion --loha --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 2 , 2 , 2 , 7 , 2); --Indigestion --tanana --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 2 , 3 , 5 , 8 , 2); --Indigestion --tenda --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 2 , 6 , 6 , 9 , 2); --Indigestion --kibo --niveauMin --niveauMax --idTrancheAge
 
-INSERT INTO MaladieParametre VALUES (default , 2 , 1 , 3 , 6 , 2);
-INSERT INTO MaladieParametre VALUES (default , 2 , 2 , 2 , 7 , 2);
-INSERT INTO MaladieParametre VALUES (default , 2 , 3 , 5 , 8 , 2);
-INSERT INTO MaladieParametre VALUES (default , 2 , 6 , 6 , 9 , 2);
-
-
-INSERT INTO MaladieParametre VALUES (default , 3 , 1 , 3 , 6 , 2);
-INSERT INTO MaladieParametre VALUES (default , 3 , 2 , 2 , 6 , 2);
-INSERT INTO MaladieParametre VALUES (default , 3 , 3 , 2 , 5 , 2);
-INSERT INTO MaladieParametre VALUES (default , 3 , 5 , 4 , 7 , 2);
+INSERT INTO MaladieParametre VALUES (default , 3 , 1 , 3 , 6 , 2); --Fatige --loha --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 3 , 2 , 2 , 6 , 2); --Fatige --tanana --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 3 , 3 , 2 , 5 , 2); --Fatige --tenda --niveauMin --niveauMax --idTrancheAge
+INSERT INTO MaladieParametre VALUES (default , 3 , 5 , 4 , 7 , 2); --Fatige --tongotra --niveauMin --niveauMax --idTrancheAge
 
 
 
-INSERT INTO MedicamentParametre VALUES (default , 1 , 1 , 2); --idmedicament --idparametre --apport
-INSERT INTO MedicamentParametre VALUES (default , 3 , 1 , 3);
-INSERT INTO MedicamentParametre VALUES (default , 4 , 1 , 4);
+INSERT INTO MedicamentParametre VALUES (default , 1 , 1 , 2); --Paracetamol --loha --apport
+INSERT INTO MedicamentParametre VALUES (default , 3 , 1 , 3); --Dollipran --loha --apport
+INSERT INTO MedicamentParametre VALUES (default , 4 , 1 , 4); --MagneB6 --loha --apport
 
-INSERT INTO MedicamentParametre VALUES (default , 4 , 2 , 3);
-INSERT INTO MedicamentParametre VALUES (default , 2 , 2 , 1);
+INSERT INTO MedicamentParametre VALUES (default , 4 , 2 , 3); --MagneB6 --tanana --apport
+INSERT INTO MedicamentParametre VALUES (default , 2 , 2 , 1); --Sirop --tanana --apport
 
-INSERT INTO MedicamentParametre VALUES (default , 4 , 3 , 3);
-INSERT INTO MedicamentParametre VALUES (default , 2 , 3 , 3);
+INSERT INTO MedicamentParametre VALUES (default , 4 , 3 , 3); --MagneB6 --tenda --apport
+INSERT INTO MedicamentParametre VALUES (default , 2 , 3 , 3); --Sirop --tanana --apport
 
-INSERT INTO MedicamentParametre VALUES (default , 2 , 4 , 1);
-INSERT INTO MedicamentParametre VALUES (default , 3 , 4 , 4);
+INSERT INTO MedicamentParametre VALUES (default , 2 , 4 , 1); --Sirop --lelo --apport
+INSERT INTO MedicamentParametre VALUES (default , 3 , 4 , 4); --Dollipran --lelo --apport
 
-INSERT INTO MedicamentParametre VALUES (default , 2 , 5 , 2);
+INSERT INTO MedicamentParametre VALUES (default , 2 , 5 , 2); --Sirop --tongotra --apport
 
-INSERT INTO MedicamentParametre VALUES (default , 2 , 6 , 4);
+INSERT INTO MedicamentParametre VALUES (default , 2 , 6 , 4); --Sirop --kibo --apport
+
 
 
 INSERT INTO ContreIndication VALUES (default , 2 , 1 , 4); --idmedicament --idparametre --apportnegatif
