@@ -24,6 +24,6 @@ app.UseSession(); // Activez la gestion de session
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Simulation}/{action=Index}/{id?}");
 
 app.Run();

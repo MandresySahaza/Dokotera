@@ -41,13 +41,19 @@
     <thead class="table-dark">
         <tr>
             <th scope="col">nomMedicament</th>
+            <th scope="col">Quantite</th>
             <th scope="col">PrixUnitaire</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">Fervex</th>
-            <td>2000</td>
-        </tr>
+        @foreach (var item in ViewBag.repMedicaments)
+        {
+            <tr>
+                <th>@item.Nom</th>
+                <th>@item.Quantite</th>
+                <td>@item.Prix</td>
+            </tr>
+        }
+
     </tbody>
 </table>

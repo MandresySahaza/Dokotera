@@ -75,6 +75,9 @@ namespace DokoteraApp.Controllers
                 List<Maladie> maladiediags = storedPatient.getMaladieOfDiag();
                 ViewBag.maladiediags = maladiediags;
 
+                List<MedicamentDiag> repMedicaments = storedPatient.getMedicamentsDiag();
+                ViewBag.repMedicaments = repMedicaments;
+
                 return View(storedPatient);
 
             }

@@ -17,7 +17,7 @@ namespace DokoteraApp.Controllers
 
         public IActionResult Index()
         {
-            Patient patient = new Patient(2, "mandresy", 12);
+            Patient patient = new Patient(1, "mandresy", 12);
             //Console.WriteLine("patient : " + patient.InsertPatient(null).Age);
 
             //PatientParametre patientParametre = new PatientParametre(0, 1, 1, 12);
@@ -59,11 +59,28 @@ namespace DokoteraApp.Controllers
             //List<MedicamentParametre> medicamentParametres = MedicamentParametre.getMedicamentParametreByIdParametre(null, 1, 18);
             //Console.WriteLine(medicamentParametres.Count());
 
-            List<Parametre> listeParams = MedicamentParametre.getParametreSitranaMedicament(null , 2);
-            for (int i = 0; i < listeParams.Count(); i++)
+
+            //List<ContreIndication> medicamentParametres = ContreIndication.getContreIndicationByIdMedicament(null, 1);
+            //for (int i = 0; i < medicamentParametres.Count; i++)
+            //{
+            //    Console.WriteLine(medicamentParametres[i].IdParametre);
+            //}
+
+
+            //List<Parametre> listeParams = MedicamentParametre.getParametreSitranaMedicament(null , 2);
+            //for (int i = 0; i < listeParams.Count(); i++)
+            //{
+            //    Console.WriteLine(listeParams[i].Nom);
+            //}
+
+
+
+            List<MedicamentDiag> repMedicament = patient.getMedicamentsDiag();
+            for (int i = 0; i < repMedicament.Count(); i++)
             {
-                Console.WriteLine(listeParams[i].Nom);
+                Console.WriteLine(repMedicament[i].Nom + " " + repMedicament[i].Prix + " " + repMedicament[i].Quantite);
             }
+
 
             return View();
         }

@@ -67,7 +67,7 @@ namespace DokoteraApp.Models
             }
         }
 
-        public static List<Parametre> getParametreSitranaMedicament(NpgsqlConnection conn, int idMedicament)
+        public static List<MedicamentParametre> getParametreSitranaMedicament(NpgsqlConnection conn, int idMedicament)
         {
             Boolean isOpen = false;
             NpgsqlConnection con = null;
@@ -89,14 +89,16 @@ namespace DokoteraApp.Models
                 command.Parameters.AddWithValue("@idMedicament", idMedicament);
                 NpgsqlDataReader reader = command.ExecuteReader();
 
-                List<Parametre> results = new List<Parametre>();
+                List<MedicamentParametre> results = new List<MedicamentParametre>();
 
                 while (reader.Read())
                 {
-                    int id = reader.GetInt32(2);
-                    String nom = reader.GetString(4);
+                    int id = reader.GetInt32(0);
+                    int idmedicament = reader.GetInt32(1);
+                    int idparametre = reader.GetInt32(2);
+                    double apport = reader.GetDouble(3);
 
-                    Parametre rep = new Parametre(id, nom);
+                    MedicamentParametre rep = new MedicamentParametre(id, idmedicament , idparametre , apport);
 
                     results.Add(rep);
                 }

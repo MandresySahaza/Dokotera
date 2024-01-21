@@ -2,24 +2,22 @@
 
 namespace DokoteraApp.Models
 {
-    public class Medicament
+    public class ContreIndication
     {
         public int Id { get; set; }
-        public string Nom { get; set; }
-        public int AgeMin { get; set; }
-        public int AgeMax { get; set; }
-        public double Prix { get; set; }
+        public int IdMedicament { get; set; }
+        public int IdParametre { get; set; }
+        public double ApportNegatif { get; set; }
 
-        public Medicament(int id, string nom, int ageMin, int ageMax, double prix)
+        public ContreIndication(int id, int idMedicament, int idParametre, double apportNegatif)
         {
             Id = id;
-            Nom = nom;
-            AgeMin = ageMin;
-            AgeMax = ageMax;
-            Prix = prix;
+            IdMedicament = idMedicament;
+            IdParametre = idParametre;
+            ApportNegatif = apportNegatif;
         }
 
-        public static Medicament getMedicamentById(NpgsqlConnection conn, int idMedicament)
+        public static List<ContreIndication> getContreIndicationByIdMedicament(NpgsqlConnection conn, int idMedicament)
         {
             Boolean isOpen = false;
             NpgsqlConnection con = null;
@@ -36,22 +34,23 @@ namespace DokoteraApp.Models
                     con = conn;
                 }
 
-                string query = "select * From Medicament where id = @idMedicament";
+                string query = "select * from ContreIndication where idMedicament = @idMedicament";
                 NpgsqlCommand command = new NpgsqlCommand(query, con);
                 command.Parameters.AddWithValue("@idMedicament", idMedicament);
                 NpgsqlDataReader reader = command.ExecuteReader();
 
-                Medicament results = null;
+                List<ContreIndication> results = new List<ContreIndication>();
 
                 while (reader.Read())
                 {
                     int id = reader.GetInt32(0);
-                    string nom = reader.GetString(1);
-                    int ageMin = reader.GetInt32(2);
-                    int ageMax = reader.GetInt32(3);
-                    double prix = reader.GetDouble(4);
+                    int idmedicament = reader.GetInt32(1);
+                    int idparametre = reader.GetInt32(2);
+                    double apportneg = reader.GetDouble(3);
 
-                    results = new Medicament(id, nom, ageMin, ageMax, prix);
+                    ContreIndication rep = new ContreIndication(id, idmedicament, idparametre, apportneg);
+
+                    results.Add(rep);
                 }
                 reader.Close();
 
@@ -59,15 +58,13 @@ namespace DokoteraApp.Models
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message + " passage getMedicament");
+                throw new Exception(e.Message + " passage getContreIndicationByIdMedicament");
             }
             finally
             {
                 if (isOpen == true) { con.Close(); }
             }
         }
-
-
 
 
     }
